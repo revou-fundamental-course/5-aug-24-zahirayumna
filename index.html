@@ -6,6 +6,9 @@
     <title>Kalkulator BMI</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="image/icon-01.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -15,50 +18,133 @@
     <main>
         <aside>
             <article>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aut vero libero perspiciatis porro eius quam impedit harum commodi, qui doloribus. Earum, numquam amet ex quam similique suscipit ab quod!</p>
+                <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu?
+                    Yuk, hitung sekarang di kalkulator BMI.</p>
             </article>
-    
-            <form action="">
-                <div>
-                    <h3>Jenis Kelamin</h3>
-                    <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki">
-                    <label for="laki-laki">Laki-laki</label>
-                    <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
-                    <label for="perempuan">Perempuan</label>
+
+            <!-- FORM -->
+
+            <form id="form" class="form">
+                <div class="form-jekel">
+                    <p style="font-weight: bold;">Jenis Kelamin</p>
+                    <div class="input-group">
+                        <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki">
+                        <label for="laki-laki">Laki-laki</label>
+                        <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>
                 </div>
 
-                <div>
-                    <h3>Berat Badan</h3>
-                    <input type="number">
+                <div class="input-weight">
+                    <p style="font-weight: bold;">Berat Badan (kg)</p>
+                    <div class="input-group">
+                        <span class="input-group-icon">
+                            <i class='fas fa-pen'></i>
+                        </span>
+                        <input type="number" id="weight" placeholder="Masukkan berat badan">     
+                    </div>
+                </div>
+
+                <div class="input-age">
+                    <p style="font-weight: bold;">Usia (tahun)</p>
+                    <div class="input-group">
+                        <span class="input-group-icon">
+                            <i class='fas fa-pen'></i>
+                        </span>
+                        <input type="number" id="age" placeholder="Masukkan usia anda">     
+                    </div>
+                </div>
+
+                <div class="input-height">
+                    <p style="font-weight: bold;">Tinggi Badan (cm)</p>
+                    <div class="input-group">
+                        <span class="input-group-icon">
+                            <i class='fas fa-pen'></i>
+                        </span>
+                        <input type="number" id="height" placeholder="Masukkan tinggi badan">     
+                    </div>
                 </div>
 
                 <div class="form-btn-container">
-                    <button class="button bg-aquamarine">Hitung BMI</button>
-                    <button class="button bg-reset">Reset</button>
+                    <button type="button" class="btn" onclick="checkBMI()">Hitung BMI</button>
+                    <button type="reset" class="btn bg-reset">Reset</button>
                 </div>
-            </form>
-            
-            <article>
-                <header>
-                    <h2>Keunggulan Fitur</h2>
-                </header>
-    
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit qui tempore placeat delectus harum maiores sint quam porro nesciunt! Sit nisi minus in sed vero repudiandae quae, architecto soluta!</p>
-            </article>
 
+            </form>
+
+            <!-- Fitur -->
+
+            <article class="mb-1">
+                <header>
+                    <h3 class="sub-title">Keunggulan Fitur</h3>
+                </header>
+                
+                <ol class="fitur">
+                    <li> Menghitung berat badan</li>
+                    <li> Menentukan kategori berat badan ideal atau tidak</li>
+                    <li> Mempersiapkan program penurunan berat badan</li>
+                </ol>
+
+                <p class="paragraph mb-1">Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau
+                    menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan
+                    yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang
+                    memenuhi syarat, seperti dokter.</p>
+
+                <p class="paragraph">Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan
+                    nilai umur. Indeks masa tubuh (atau BMI) dihitung sebagai berat badan Anda
+                    (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau 
+                    BMI = Kg/M <sup>2</sup>.
+                </p>
+            </article>
         </aside>
 
+        <!-- Hasil -->
+
         <aside>
-            <section>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, inventore odio rem quod laboriosam culpa, voluptate quos, ea fuga maiores molestiae amet magni tempore commodi illo nisi. Quas, magni cumque.</p>
+            <section id="result" class="container d-hidden">
+                <h3 class="title">Hasil</h3>
+                <div class="sub-container mb-1">
+                    <h4 id="result-title" class="result-title"></h4>
+                    <div id="result-bmi" class="result-bmi"></div>
+                    <p id="result-desc" class="result-desc"></p>
+                    <button class="btn">Download Hasil BMI</button>
+                </div>
+
+                <div class="mb-1 paragraph">
+                    <p id="result-text"></p>
+                    <p id="suggestion-text"></p>
+                    <p id="advice-text"></p>
+                    <div class="button-cta">
+                        <button class="btn">Konsultasi Ahli Gizi Via Aplikasi</button>
+                        <button class="btn">Registrasi Online Ahli Gizi</button>
+                    </div>
+                    <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh
+                        dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai
+                        resiko dan kekhawatiran Anda terkait dengan berat badan Anda.
+                    </p>
+                </div>
+
+
+                <div class="sub-container paragraph">
+                    <h6 id="risk-title"></h6>
+                    <ul id="list-risk"></ul>
+                    <div class="button-cta">
+                        <button class="btn">Konsultasi Dokter Via Aplikasi</button>
+                        <button class="btn">Registrasi Online Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="download-app">
+                    <p style="font-weight: bold;">Download Aplikasi</p>
+                    <div class="button-cta"></div>
+                        <img src="image/logo-gplay.png" alt="Google Play" class="img">
+                        <img src="image/logo-appstore.png" alt="Apple Store" class="img">
+                </div>
+
             </section>
         </aside>
 
     </main>
-
-    <footer>
-        <p>made by ZAHIRA</p>
-    </footer>
 
 </body>
 </html>
