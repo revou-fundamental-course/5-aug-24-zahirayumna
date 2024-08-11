@@ -56,7 +56,6 @@ p {
 }
 
 .form-btn-container {
-    margin-top: 24px;
     margin-bottom: 16px;
 }
 
@@ -86,44 +85,70 @@ p {
     background-color: #cf0c0c;
 }
 
+/* Form action */
+
 .form {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 10px 0;
     margin-bottom: 40px;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.input-group {
+.form .form-input {
+    display: block;
+    width: 100%;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+    background-clip: padding-box;
+    appearance: none;
+    border: 1px solid var(--grey);
+}
+
+.form .input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 0;
+}
+
+.form .input-group > .form-input {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+.form .input-group-icon {
+    background-color: var(--main-color);
+    border-color: var(--grey);
+    background-clip: padding-box;
+    appearance: none;
+    border: 1px solid var(--grey);
+    padding: 10px;
+    border-radius: 8px 0 0 8px;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    border: 1px solid var(--grey);
-    border-radius: 4px; 
+}
+
+.input-group .fas.fa-pen {
+    color: white;
     padding: 5px;
+    margin: 0;
 }
 
-.input-group-icon {
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #555;
-}
-
-
-input[type=number] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: monospace;
-    font-size: 14px;
-}
 
 .fitur {
     margin-bottom: 30px;
