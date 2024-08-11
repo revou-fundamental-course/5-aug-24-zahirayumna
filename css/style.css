@@ -51,6 +51,11 @@ p {
     margin-bottom: 30px;
 }
 
+.sub-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
 .d-hidden {
     visibility: hidden;
 }
@@ -149,12 +154,16 @@ p {
     margin: 0;
 }
 
+/* Fitur Action */
 
 .fitur {
     margin-bottom: 30px;
+    margin-left: 0;
+    padding-left: 20px;
 }
 
-
-footer {
-    text-align: center;
+.fitur li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
