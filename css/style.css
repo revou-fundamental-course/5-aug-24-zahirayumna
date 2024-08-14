@@ -56,12 +56,14 @@ p {
     margin-bottom: 15px;
 }
 
-/* .d-hidden {
-    visibility: hidden;
-} */
+.d-hidden {
+    display: none;
+}
 
 .form-btn-container {
     margin-bottom: 16px;
+    gap: 13px;
+    display: flex;
 }
 
 .btn {
@@ -168,13 +170,13 @@ p {
 }
 
 
-/* Hasil Action */
+/* Result Action */
 
 .sub-container {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,6 +184,13 @@ p {
 
 .result-title {
     font-size: 18px;
+    margin: 0;
+}
+
+.risk-title {
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
 }
   
 .result-bmi {
@@ -191,24 +200,31 @@ p {
 .result-desc {
     margin: 10px 0 20px;
     font-size: 15px;
+    text-align: center;
 }
 
 .list-risk {
     text-decoration: none;
     text-align: center;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.list-title {
+    font-size: 18px;
 }
 
 .button-cta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
     margin: 10px 0;
     justify-content: center;
 }
 
 .button-cta button {
     font-size: 13px;
+    margin: 0 10px;
 }
 
 .download-app {
@@ -224,5 +240,14 @@ p {
     object-fit: contain;
     cursor: pointer;
     border-radius: 8px; 
-    margin: 0 10px;
+    margin-top: auto;
+}
+
+/* Responsive action */
+
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        width: 100%;
+    }
 }
