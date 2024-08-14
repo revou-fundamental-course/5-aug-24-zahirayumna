@@ -15,28 +15,32 @@
         <h1 class="main-title">Kalkulator BMI</h1>
     </header>
 
+    
     <main>
+
+        <!-- HOME SECTION START -->
+
         <aside>
             <article>
                 <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu?
                     Yuk, hitung sekarang di kalkulator BMI.</p>
             </article>
 
-            <!-- FORM -->
+            <!-- FORM SECTION -->
 
             <form id="form" class="form">
                 <div>
-                    <label class="form-label" for="jenis-kelamin" style="font-weight: bold;">Jenis Kelamin</label>
+                    <label for="gender" style="font-weight: bold;">Jenis Kelamin</label>
                     <div class="input-group">
-                        <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki" class="form-input-check">
+                        <input type="radio" id="laki-laki" name="gender" value="laki-laki">
                         <label for="laki-laki">Laki-laki</label>
-                        <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan" class="form-input-check">
+                        <input type="radio" id="perempuan" name="gender" value="perempuan">
                         <label for="perempuan">Perempuan</label>
                     </div>
                 </div>
 
                 <div>
-                    <label class="form-label" for="weight" style="font-weight: bold;">Berat Badan (kg)</label>
+                    <label for="weight" style="font-weight: bold;">Berat Badan (kg)</label>
                     <div class="input-group">
                         <span class="input-group-icon">
                             <i class="fas fa-pen"></i>
@@ -46,7 +50,7 @@
                 </div>
 
                 <div>
-                    <label class="form-label" for="age" style="font-weight: bold;">Usia (tahun)</label>
+                    <label for="age" style="font-weight: bold;">Usia (tahun)</label>
                     <div class="input-group">
                         <span class="input-group-icon">
                             <i class="fas fa-pen"></i>
@@ -55,8 +59,8 @@
                     </div>
                 </div>
 
-                <div class="input-height">
-                    <label class="form-label" for="height" style="font-weight: bold;">Tinggi Badan (cm)</label>
+                <div>
+                    <label for="height" style="font-weight: bold;">Tinggi Badan (cm)</label>
                     <div class="input-group">
                         <span class="input-group-icon">
                             <i class="fas fa-pen"></i>
@@ -66,13 +70,13 @@
                 </div>
 
                 <div class="form-btn-container">
-                    <button type="button" class="btn" onclick="checkBMI()">Hitung BMI</button>
-                    <button type="reset" class="btn bg-reset">Reset</button>
+                    <button type="button" class="btn" onclick="hasilBMI()">Hitung BMI</button>
+                    <button type="reset" class="btn bg-reset" onclick="resetBMIResult()">Reset</button>
                 </div>
 
             </form>
 
-            <!-- Fitur -->
+            <!-- Fitur section -->
 
             <article class="mb-1">
                 <header>
@@ -98,22 +102,24 @@
             </article>
         </aside>
 
-        <!-- Hasil -->
+        <!-- HOME SECTION END -->
+
+        <!-- RESULT SECTION START -->
 
         <aside>
             <section id="result" class="container d-hidden">
                 <h3 class="title">Hasil</h3>
                 <div class="sub-container mb-1">
-                    <h4 id="result-title" class="result-title"></h4>
-                    <div id="result-bmi" class="result-bmi"></div>
-                    <p id="result-desc" class="result-desc"></p>
+                    <h4 id="resultTitle" class="result-title"></h4>
+                    <div id="resultBMI" class="result-bmi"></div>
+                    <p id="resultDesc" class="result-desc"></p>
                     <button class="btn">Download Hasil BMI</button>
                 </div>
 
                 <div class="mb-1 paragraph">
-                    <p id="result-text"></p>
-                    <p id="suggestion-text"></p>
-                    <p id="advice-text"></p>
+                    <p id="resultText" class="result-text"></p>
+                    <p id="suggestionText" class="suggestion-text"></p>
+                    <p id="adviceText" class="advice-text"></p>
                     <div class="button-cta">
                         <button class="btn">Konsultasi Ahli Gizi Via Aplikasi</button>
                         <button class="btn">Registrasi Online Ahli Gizi</button>
@@ -124,15 +130,18 @@
                     </p>
                 </div>
 
+                <!-- EXPLANATION BMI RESULT -->
 
                 <div class="sub-container paragraph">
-                    <h6 id="risk-title"></h6>
-                    <ul id="list-risk" class="list-risk"></ul>
+                    <h6 id="riskTitle" class="risk-title"></h6>
+                    <ul id="listRisk" class="list-risk"></ul>
                     <div class="button-cta">
                         <button class="btn">Konsultasi Dokter Via Aplikasi</button>
                         <button class="btn">Registrasi Online Sekarang</button>
                     </div>
                 </div>
+
+                <!-- APP -->
 
                 <div class="download-app">
                     <p style="font-weight: bold;">Download Aplikasi</p>
@@ -141,13 +150,10 @@
                         <img src="image/logo-appstore2.png" alt="Apple Store" class="img">
                     </div>
                 </div>
-
-                <div>
-                    <button class="btn"onclick="regenerateBMI()">Hitung Lagi</button>
-                </div>
-
             </section>
         </aside>
+
+        <!-- RESULT SECTION END -->
 
     </main>
 <script src="js/script.js"></script>
